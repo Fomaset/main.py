@@ -1,1 +1,9 @@
-
+a = int(input())
+b = int(input())
+for i in range(a, b + 1):
+    count = 0
+    for divisor in range(2, i):
+        if i % divisor == 0:
+            count += 1
+    if count == 4:
+        print(i) # получилось выводить только числа из заданного диапазона, у которых 4 делителя
