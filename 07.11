@@ -1,6 +1,6 @@
 def count_divisors(num):
     count = 0
-    for i in range(1, int(num**0.5) + 1):
+    for i in range(1, int(num ** 0.5) + 1):
         if num % i == 0:
             count += 2 if i != num // i else 1
     return count
@@ -11,7 +11,7 @@ b = int(input("Введите конец диапазона: "))
 for num in range(a, b + 1):
     if count_divisors(num) == 4:
         divisors = []
-        for i in range(1, int(num**0.5) + 1):
+        for i in range(1, int(num  ** 0.5) + 1):
             if num % i == 0:
                 if i != num // i:
                     divisors.append(num // i)
@@ -19,4 +19,5 @@ for num in range(a, b + 1):
                 else:
                     divisors.append(i)
                 divisors.sort(reverse=True)
-  print(f"Число {num} имеет ровно 4 делителя: {divisors}")
+
+        print(f"Число {num} имеет ровно 4 делителя: {divisors}")
