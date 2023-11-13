@@ -1,9 +1,22 @@
-a = int(input())
-b = int(input())
-for i in range(a, b + 1):
+def count_divisors(num):
     count = 0
-    for divisor in range(2, i):
-        if i % divisor == 0:
-            count += 1
-    if count == 4:
-        print(i) # получилось выводить только числа из заданного диапазона, у которых 4 делителя
+    for i in range(1, int(num**0.5) + 1):
+        if num % i == 0:
+            count += 2 if i != num // i else 1
+    return count
+
+a = int(input("Введите начало диапазона: "))
+b = int(input("Введите конец диапазона: "))
+
+for num in range(a, b + 1):
+    if count_divisors(num) == 4:
+        divisors = []
+        for i in range(1, int(num**0.5) + 1):
+            if num % i == 0:
+                if i != num // i:
+                    divisors.append(num // i)
+                    divisors.append(i)
+                else:
+                    divisors.append(i)
+                divisors.sort(reverse=True)
+  print(f"Число {num} имеет ровно 4 делителя: {divisors}")
