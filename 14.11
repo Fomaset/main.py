@@ -1,0 +1,11 @@
+n = int(input("Введите кол-во чисел: "))
+count = 0
+for i in range(n):
+    num = input("Число")
+    for i in range(0, len(num) - 1):
+        if (int(num[i]) % 2) == (int(num[i + 1]) % 2):
+            break
+    else:
+        count += 1
+        
+print(f"Условие выполняется в {count} числах")
