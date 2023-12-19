@@ -1,0 +1,9 @@
+base = '0123456789abcdefghijklmnopqrstuvwxyz'
+def basebase(num):
+    a = 0
+    x = 0
+    for i in num[::-1]:
+        x += base.index(i) * (37 ** a)
+        a += 1
+    return x
+print(basebase(input()) + basebase(input()))
