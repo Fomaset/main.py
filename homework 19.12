@@ -1,0 +1,8 @@
+n = int(input("Введите количество чисел: "))
+count = []
+print("Введите числа: ")
+for i in range(0,n):
+    a = int(input())
+    count.append(bin(a)[2:])
+m = max(count, key=len)
+print("Чиcло, с наибольшим количеством разрядов в двоичной с/с: ", int(m, 2))
