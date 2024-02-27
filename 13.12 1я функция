@@ -1,0 +1,6 @@
+def funct(*args):
+    count = 0
+    for num in args:
+        if len(str(num)) == 3 and num % 3 == 0 and str(num)[1] == '2':
+            count += 1
+    return count
